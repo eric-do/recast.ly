@@ -1,12 +1,13 @@
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
+import exampleVideoData from '../data/exampleVideoData.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       videos: [],
-      currentVideo: this.props.videos[0]
+      currentVideo: exampleVideoData[0]
     };
   }
   
@@ -30,7 +31,7 @@ class App extends React.Component {
             <VideoPlayer video={this.state.currentVideo}/>
           </div>
           <div className="col-md-5">
-            <VideoList onClick={this.onClickHandler.bind(this)} videos={this.props.videos} />
+            <VideoList onClick={this.onClickHandler.bind(this)} videos={exampleVideoData} />
           </div>
         </div>
       </div> 

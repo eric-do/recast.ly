@@ -1,4 +1,4 @@
-import '../config/youtube.js';
+import './config/youtube.js';
 
 var searchYouTube = (options, callback) => {
   var query = options.query;
