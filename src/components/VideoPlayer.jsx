@@ -1,4 +1,7 @@
 var VideoPlayer = (props) => (
+  // Input: props - video object
+  // Video player receives a video object as a prop
+  // It uses attributes of the video object (id, snippet:title, snippet:description) to correctly display the embedded video, title, description
   <div className="video-player">
     <div className="embed-responsive embed-responsive-16by9">
       <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${props.video.id.videoId}`} allowFullScreen></iframe>

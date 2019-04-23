@@ -1,4 +1,8 @@
 var VideoListEntry = (props) => (
+  // Input: props: onClick (onClickHandler), and video object
+  // VideoListEntry is the endpoint for App passing down its onClick method and video objects
+  // VideoList entry puts the onClick method into its div which contains video title
+  // When a user clicks the video title, onClick() is fired, and handled by passing the video object to it
   <div className="video-list-entry media">
     <div className="media-left media-middle">
       <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />

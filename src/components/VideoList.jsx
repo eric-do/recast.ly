@@ -1,6 +1,13 @@
 import VideoListEntry from './VideoListEntry.js';
 
 var VideoList = (props) => (
+  // Input: props - onClick, video
+  // Return: JSX
+  // VideoList takes 2 props:
+  //   onClick: a method that it continues to pass to VideoListEntry
+  //   video: the video object to pass as prop to VideoListEntry
+  // VideoList iterates through an array of videos using Array.prototype.map, and returns
+  //  an array of JSX objects with respective videos
   <div className="video-list">
     {
       props.videos.map(video => (
