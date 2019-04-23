@@ -59,8 +59,8 @@ class App extends React.Component {
     // Whenever we make a call to searchYouTube, we will pass it two params
     //  Object containing the current query
     //  Function callback to update state
-    console.log(event.target.value);
-    this.searchYouTube({query: event.target.value}, _.debounce(data => {
+    console.log(event.target.value + event.key);
+    this.searchYouTube({query: event.target.value + event.key}, _.debounce(data => {
       this.setState({
         videos: data
       });
