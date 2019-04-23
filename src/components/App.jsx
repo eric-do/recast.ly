@@ -6,14 +6,14 @@ class App extends React.Component {
     super(props);
     this.state = {
       videos: [],
-      currentVideo: ''
+      currentVideo: this.props.videos[0]
     };
   }
   
-  onClickHandler(videoId) {
+  onClickHandler(video) {
     console.log('hi');
     this.setState({
-      currentVideo: videoId
+      currentVideo: video
     });
   }
   
@@ -27,7 +27,7 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer currentVideo={this.state.currentVideo} video={this.props.videos[0]}/>
+            <VideoPlayer video={this.state.currentVideo}/>
           </div>
           <div className="col-md-5">
             <VideoList onClick={this.onClickHandler.bind(this)} videos={this.props.videos} />
