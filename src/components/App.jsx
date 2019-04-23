@@ -1,12 +1,16 @@
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
 import exampleVideoData from '../data/exampleVideoData.js';
+import searchYouTube from '../lib/searchYouTube.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.searchYouTube = props.searchYouTube || searchYouTube;
     this.state = {
-      videos: [],
+      videos: this.searchYouTube({query: 'test', max: 5}, function(data) { 
+        console.log(data);
+      }),
       currentVideo: exampleVideoData[0]
     };
   }
